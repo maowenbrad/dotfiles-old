@@ -15,3 +15,14 @@ alias tg=terragrunt
 # Chezmoi
 alias ch='chezmoi'
 alias cha='ch -v apply && sz'
+# notes
+alias n=notes-session
+function notes-session() {
+  cd ~/workspace/repositories/notes/Notes/
+  if [[ ! $(zellij list-sessions --short | grep 'notes') ]]; then
+    zellij --session notes
+  else
+    zellij attach notes
+  fi
+  cd -
+}
