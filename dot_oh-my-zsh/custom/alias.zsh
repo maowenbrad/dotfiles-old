@@ -15,6 +15,20 @@ alias tg=terragrunt
 # Chezmoi
 alias ch='chezmoi'
 alias cha='ch -v apply && sz'
+
+# dotfiles
+alias che=dotfiles-session
+function dotfiles-session ()
+{
+  cd ~/.local/share/chezmoi/
+  if [[ ! $(zellij list-sessions --short | grep 'dotfiles') ]]; then
+    zellij --session dotfiles
+  else
+    zellij attach dotfiles
+  fi
+  cd -
+}
+
 # notes
 alias n=notes-session
 function notes-session() {
