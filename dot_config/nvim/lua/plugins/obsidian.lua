@@ -1,5 +1,6 @@
 return {
   "epwalsh/obsidian.nvim",
+  enabled = true,
   version = "*", -- recommended, use latest release instead of latest commit
   lazy = true,
   ft = "markdown",
@@ -13,17 +14,30 @@ return {
   dependencies = {
     -- Required.
     "nvim-lua/plenary.nvim",
-
+    "hrsh7th/nvim-cmp",
+    "nvim-telescope/telescope.nvim",
+    "nvim-treesitter",
     -- see below for full list of optional dependencies 👇
   },
   opts = {
+    ui = {
+      enabled = true,
+    },
     workspaces = {
       {
         name = "personal",
-        path = "~/workspace/repositories/notes/",
+        path = "~/workspace/maowen-archive/",
       },
     },
-
     -- see below for full list of options 👇
+    notes_subdir = "_inbox",
+    new_notes_location = "notes_subdir",
+    note_id_func = function(title)
+      local suffix = ""
+      for _ = 1, 4 do
+        suffix = suffix .. string.char(math.random(65, 90))
+      end
+      return tostring(os.date("%Y%m%d_%H%M%S")) .. "_" .. suffix
+    end,
   },
 }
