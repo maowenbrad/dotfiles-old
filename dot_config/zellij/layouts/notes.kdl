@@ -1,0 +1,17 @@
+layout {
+  tab cwd="/Users/mbraddy/workspace/repositories/notes/Notes" {
+    pane size=1 borderless=true {
+        plugin location="zellij:tab-bar"
+    }
+    pane split_direction="vertical" {
+        pane {
+          borderless true
+          command "nvim"
+          args "/Users/mbraddy/workspace/repositories/notes/Notes/"
+        }
+    }
+    pane size=2 borderless=true {
+        plugin location="zellij:status-bar"
+    }
+  }
+}
