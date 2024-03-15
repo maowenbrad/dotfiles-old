@@ -14,3 +14,7 @@ tasks:
     dir: ~/workspace/maowen-archive/
     cmds:
       - nvim ./README.md
+  zettel:open:tasks:
+    dir: ~/workspace/maowen-archive/
+    cmds:
+      - nvim ./TASKS.md

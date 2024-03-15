@@ -72,3 +72,4 @@ function dotfiles-session ()
 
 # notes
 alias n="task --global zettel:open"
+alias nt="task --global zettel:open:tasks"

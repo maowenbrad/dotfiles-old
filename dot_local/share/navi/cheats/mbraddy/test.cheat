@@ -1,0 +1,29 @@
+% dirs, common
+
+$ pictures_folder: echo "/my/pictures"
+
+% mbraddy, wallpapers
+@ dirs, common
+
+# Should print /my/pictures/wallpapers
+echo "<pictures_folder>/wallpapers"
+
+% screenshots
+@ dirs, common
+
+# Should print /my/pictures/screenshots
+echo "<pictures_folder>/screenshots"
+
+
+% mbraddy, chezmoi
+@ chezmoi
+# Just run chezmoi
+chezmoi --help
+
+% aliases
+
+# This is one command :: el
+echo lorem ipsum\cr
+
+# This is another command :: ef
+echo foo bar

@@ -114,6 +114,7 @@ export ZELLIJ_CONFIG_FILE=$XDG_CONFIG_HOME/zellij/config.kdl
 
 eval "$(starship init zsh)"
 eval "$(zoxide init --cmd cd zsh)"
+eval "$(navi widget zsh)"
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/vault vault
